@@ -1,10 +1,9 @@
-
-<!DOCTYPE html>  
+<!DOCTYPE html>   
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Classes -BrainStrom Classes</title>
+    <title>Live Classes - BrainStorm Classes</title>
     <style>
         * {
             margin: 0;
@@ -72,12 +71,6 @@
             0% { color: red; }
             100% { color: black; }
         }
-        .live-frame {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
@@ -107,15 +100,9 @@
         <button class="back-btn" onclick="goBack()">Back</button>
     </div>
 
-    <!-- Live Class Section -->
-    <div id="liveClassSection" class="container hidden">
-        <h3>Live Class - Satyam Academy</h3>
-        <iframe id="youtubeEmbed" class="live-frame" src="" allowfullscreen></iframe>
-    </div>
-
     <script>
         let selectedClass = null;
-        let admissionNumbers = ["961", "67890"]; // Replace with real admission numbers
+        let admissionNumbers = ["961", "67890" ,"4044"]; // Replace with real admission numbers
         let classTimes = { 10: "16:43:00", 12: "17:00:00" }; // Class timings (24-hour format)
 
         function selectClass(cls) {
@@ -165,12 +152,12 @@
         function verifyAdmission() {
             let enteredNumber = document.getElementById("admissionNumber").value;
             if (admissionNumbers.includes(enteredNumber)) {
-                document.getElementById("admissionSection").classList.add("hidden");
-                document.getElementById("liveClassSection").classList.remove("hidden");
-
-                document.getElementById("youtubeEmbed").src = 
-                    selectedClass === 10 ? "https://www.youtube.com/embed/f5dM_pbwZaE?si=WAapzPG3IRAgRZOY" : 
-                                           "https://www.youtube.com/embed/YOUR_CLASS_12_VIDEO_ID";
+                // 🔥 Redirect to class-specific link after successful verification
+                let redirectURL = selectedClass === 10 
+                    ? "https://sattu6560.github.io/Class-10th-Live-/" 
+                    : "https://yourwebsite.com/class12-live";
+                
+                window.location.href = redirectURL;
             } else {
                 alert("Invalid Admission Number!");
             }
@@ -180,11 +167,9 @@
             document.getElementById("classSelection").classList.remove("hidden");
             document.getElementById("scheduleSection").classList.add("hidden");
             document.getElementById("admissionSection").classList.add("hidden");
-            document.getElementById("liveClassSection").classList.add("hidden");
             selectedClass = null;
         }
     </script>
 
 </body>
 </html>
-
