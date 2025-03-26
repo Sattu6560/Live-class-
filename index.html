@@ -103,7 +103,7 @@
     <script>
         let selectedClass = null;
         let admissionNumbers = ["961", "67890" ,"4044"]; // Replace with real admission numbers
-        let classTimes = { 10: "16:43:00", 12: "17:00:00" }; // Class timings (24-hour format)
+        let classTimes = { 10: "14:50:00", 12: "24:00:00" }; // Class timings (24-hour format)
 
         function selectClass(cls) {
             selectedClass = cls;
@@ -112,8 +112,8 @@
 
             let classTime = classTimes[cls];
             document.getElementById("scheduleText").innerText = 
-                cls === 10 ? "Next Class: Physics - March 8, 04:30 PM" : 
-                             "Next Class: Math - March 8, 05:00 PM";
+                cls === 10 ? "Next Class: Faculty Announcements- March 26, 02:30 PM" : 
+                             "Next Class: No Class - March 26, 12:00 PM";
             document.getElementById("classStartTime").innerText = classTime;
             
             startTimer(classTime);
